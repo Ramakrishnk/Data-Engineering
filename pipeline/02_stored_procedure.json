@@ -1,0 +1,30 @@
+{
+	"name": "02_stored_procedure",
+	"properties": {
+		"description": "while working with stored procedures need to have when loading data from customer to customer_destination we use stored procedures to not to have duplicate data truncate destination table and load data into destination table",
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[loadcustomerdata]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-05-20T13:58:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

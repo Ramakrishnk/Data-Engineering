@@ -1,0 +1,37 @@
+{
+	"name": "04_stored_procedure_with_string_split",
+	"properties": {
+		"description": "this pipeline works with as when it triggers ( , ) it will print the data in next line",
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[loadcustomerdatawithparamsplit]",
+					"storedProcedureParameters": {
+						"firstnam": {
+							"value": "Alexander,Alice",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-05-20T13:58:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

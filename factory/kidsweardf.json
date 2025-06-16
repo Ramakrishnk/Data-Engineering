@@ -1,0 +1,9 @@
+{
+	"name": "kidsweardf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "66ee03a4-c28e-4c8d-bbc8-a99ea1bd6a29",
+		"tenantId": "b8fb7d3f-50cf-4cb0-be89-9ec325a4eb3a"
+	}
+}
